@@ -24,6 +24,7 @@ public class Cook extends Thread {
             System.out.println(Thread.currentThread().getName() + " would like to fill the pot");
             try {
                 pot.fillpot();
+                Thread.sleep(300);
             }
             catch(InterruptedException e) {};
         }

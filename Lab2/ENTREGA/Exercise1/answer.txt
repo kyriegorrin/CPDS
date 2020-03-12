@@ -1,0 +1,7 @@
+The easiest way to fix BadPotTwo was to just add the "synchronized" keywords to the getserving and fillpot functions. This way, we can avoid all threads executing the same function at the same time. When that happened, a lot of threads could think that there were enough servings when in fact there weren't (other threads were just about to get the remaining servings). This was accentuated by the fact that there was a sleep, which increased the time frame in which the serving information was not accurate.
+
+The "Banket" approach is what we would know as a blocking call. It will get stuck trying to get servings/fill the pot as long as the conditions for it weren't met. While that may ensure that the pot won't have negative servings and similar missbehaviors, it is not an efficient use of thread time.
+
+"BanketNoWait", in the other hand, ensures that each thread checks the conditions for getting a serving or filling the pot. If the conditions are met, it justs follows through. If not, the thread won't spend any more time stuck there and it will get out, proceeding to do some other useful work (if programmed to do so).
+
+If we take into account only this, we'd prefer a "BanketNoWait" approach. 

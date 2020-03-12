@@ -19,7 +19,7 @@ public class BadPotTwo {
         
         public void getserving() throws InterruptedException {
             if (servings == 0) {
-                System.out.println(Thread.currentThread().getName() + " has to wait ");
+                System.out.println(Thread.currentThread().getName() + " goes for a walk ");
             }
             else{
                 Thread.sleep(200);
@@ -32,7 +32,7 @@ public class BadPotTwo {
         
         public void fillpot() throws InterruptedException {
             if (servings > 0) {
-                System.out.println(Thread.currentThread().getName() + " has to wait");
+                System.out.println(Thread.currentThread().getName() + " goes for a walk");
             }
             else{
                 Thread.sleep(200);

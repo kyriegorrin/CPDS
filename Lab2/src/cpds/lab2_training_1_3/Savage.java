@@ -24,6 +24,7 @@ public class Savage extends Thread {
             System.out.println(Thread.currentThread().getName() + " is hungry");
             try {
                 pot.getserving();
+                Thread.sleep(300);
             }
             catch(InterruptedException e) {};
         }
